@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>J.Shivani_22bce3055</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+ box-sizing: border-box;
+}
+
+body {
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+}
+.page{
+  border: 2px solid rgb(15, 14, 14);
+  margin: auto;
+}
+.page1{
+  margin: auto;
+  border: 2px solid rgb(15, 14, 14);
+}
+.header {
+    background-color: blueviolet;
+ border: 1px solid rgb(15, 14, 14);
+ padding: 10px;
+}
+.header1 {
+ border: 1px solid rgb(15, 14, 14);
+ padding: 5px;
+}
+.form1 {
+ background-color: white;
+ height: 500px;
+ width: 50%;
+ float: left;
+ padding-top: 5px;
+ padding-right: 10px;
+ padding-bottom: 40px;
+ padding-left: 10px; 
+ border: 1px solid rgb(18, 17, 17);
+}
+.form2 {
+ background-color: white;
+ height: 500px;
+ width: 50%;
+ float: left;
+ padding-top: 5px;
+ padding-right: 10px;
+ padding-bottom: 40px;
+ padding-left: 10px; 
+ border: 1px solid rgb(18, 17, 17);
+}
+.resume1 {
+ background-color: white;
+ height: 600px;
+ width: 50%;
+ float: left;
+ padding-top: 5px;
+ padding-right: 10px;
+ padding-bottom: 40px;
+ padding-left: 10px; 
+ border: 1px solid rgb(18, 17, 17);
+}
+.resume2 {
+ background-color: white;
+ height: 600px;
+ width: 50%;
+ float: left;
+ padding-top: 5px;
+ padding-right: 10px;
+ padding-bottom: 40px;
+ padding-left: 10px; 
+ border: 1px solid rgb(18, 17, 17);
+}
+.footer {
+background-color: white;
+width: 100%;
+float: left;
+text-align: center;
+font-size: 5px;
+padding: 20px;
+border: 1px solid rgb(18, 17, 17);
+}
+
+h1 {
+    color: white;
+  font-family: 'Times New Roman';
+  font-size: 300%;
+  text-align: center;
+}
+
+h2{
+  color: rgb(10, 9, 10);
+  font-family: Verdana;
+  font-size: 180%;
+  text-align: center;
+}
+
+h3{
+  text-transform: uppercase;
+  color: rgb(10, 9, 10);
+  font-family: Verdana;
+  font-size: 230%;
+  text-align: center;
+}
+p {
+  color: rgb(24, 23, 24);
+  font-family: 'Times New Roman';
+  font-size: 150%;
+  text-align: center;
+}
+
+label {
+    margin: 5px ;
+}
+input, textarea {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="header">
+ <h1>FORM</h1>
+</div>
+<div class="form1">
+    <h2><b>PERSONAL INFO</b></h2>
+  <form>
+    <label for="name">Name:</label> 
+    <input type="text" id="name" required><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" required><br>
+
+    <label for="mob">Mobile Number:</label>
+    <input type="tel" id="mob" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br>
+
+    <label for="add">Address:</label>
+    <input type="text" id="add" required><br>
+
+    <label for="biodata">Short Biodata:</label><br>
+    <textarea id="biodata" rows="4" required></textarea><br>
+  </form>
+</div>
+<div class="form2">
+  <h2><b>EDUCATIONAL QUALIFICATION</b></h2>
+  <form>
+    <label for="school">School:</label>
+    <input type="text" id="school" required><br>
+
+    <label for="year1">Paasing year:</label>
+    <input type="text" id="year1" required><br>
+
+    <label for="college">college:</label>
+    <input type="text" id="college" required><br>
+
+    <label for="year2">Passing year:</label>
+    <input type="text" id="year2" required><br>
+
+    <label for="skill">Skills:</label>
+    <input type="text" id="skill" required><br>
+
+    <label for="exp">Experience:</label><br>
+    <textarea id="exp" rows="4" required></textarea><br>
+  </form>
+</div>
+<div class="footer">
+  <button type="button" onclick="resume()">Generate Resume</button>
+</div>
+</div>
+<br><br>
+<div class="page1">
+  <br><br>
+  <div class="header">
+   <h1>RESUME</h1>
+  </div>
+  <div class="header1">
+    <h3 id="demo1"></h3>
+  </div>
+  <div class="resume1">
+    <h2><b>ABOUT ME</b></h2>
+    <p id="demo2"></p>
+    <hr>
+    <h2><b>CONTACT DETAILS</b></h2>
+    <p id="demo3"></p>         
+  </div>
+  <div class="resume2">
+    <h2><b>EDUCATIONAL QUALIFICATION</b></h2>
+    <p id="demo4"></p>
+    <hr>
+    <h2><b>EXPERIENCE</b></h2>
+    <p id="demo5"></p>
+    <hr>
+    <h2><b>SKILLS</b></h2>
+    <p id="demo6"></p> 
+  </div>
+</div>
+<script>
+  function resume(){
+        let name1=document.getElementById("name").value;
+        const dob1=document.getElementById("dob").value;
+        const b= new Date(dob1);
+        const d=new Date();
+        const age=d.getFullYear()-b.getFullYear();
+        let mob1=document.getElementById("mob").value;
+        let email1=document.getElementById("email").value;
+        let bio=document.getElementById("biodata").value;
+        let add1=document.getElementById("add").value;
+        let school1=document.getElementById("school").value;
+        let y1=document.getElementById("year1").value;
+        let college1=document.getElementById("college").value;
+        let y2=document.getElementById("year2").value;
+        let exp1=document.getElementById("exp").value;
+        let skill1=document.getElementById("skill").value;
+        let r= "<b>" + "MOB: "+ "</b>" + mob1 + "<br><br>" 
+        +  "<b>" + "EMAIL: " + "</b>"+ email1 + "<br><br>"
+        + "<b>"+ "ADDRESS: " + "</b>" +add1;
+        let x="<b>" + "AGE: " +"</b>" + age + "<br><br>" 
+        + "<b>" + "DOB: " +"</b>" +dob1 + "<br><br>" 
+        + bio;
+        let y="<b>"+"SECONDARY SCHOOL <br>"+"</b>"+school1+"<br>"+y1+"<br><br>"+
+        "<b>"+"BACHELOR OF TECHNOLOGY <br>"+"</b>"+college1+"<br>"+y2;
+        document.getElementById("demo1").innerHTML=name1+"<br>"+"Student";
+        document.getElementById("demo2").innerHTML=x;
+        document.getElementById("demo3").innerHTML=r;
+        document.getElementById("demo4").innerHTML=y;
+        document.getElementById("demo5").innerHTML=exp1; 
+        document.getElementById("demo6").innerHTML=skill1;       
+  }
+</script>
+</div>
+</body>
+</html>
